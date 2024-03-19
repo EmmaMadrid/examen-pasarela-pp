@@ -18,7 +18,7 @@ function App() {
         <Route path='/Edit/:id' element={<Edit />} />
       </Routes>
       <div>
-        <PayPalButton totalValue='100' invioce='Dildo de dragon de 10 pulgadas' />
+        <PayPalButton totalValue='100' invioce='Dildo de dragon de 10 pulgadas ay que rico' />
       </div>
       </BrowserRouter>
 
