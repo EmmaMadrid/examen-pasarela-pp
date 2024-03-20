@@ -22,16 +22,19 @@ const Catalog = () => {
         getProducts()
     }, [])
 
-    //funcion que agrega el producto al carrito para luego mostrarlo en la pagina de carrito
     const addToCart = (id) => {
+        const product = products.find((product) => product.id === id)
+        const cart = JSON.parse(localStorage.getItem('cart')) || []
+        cart.push(product)
+        localStorage.setItem('cart', JSON.stringify(cart))
         MySwal.fire({
-            position: 'center',
             icon: 'success',
-            title: 'Producto agregado al carrito!',
+            title: 'Producto agregado al carrito',
             showConfirmButton: false,
             timer: 1500
         })
     }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,14 +48,20 @@ const Catalog = () => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/">Inicio</Link>
                             </li>
+                            <br />
+                            <br />
                             <li className="nav-item">
-                                <Link className="nav-link" to="/carrito">Carrito</Link>
+                                <Link className="nav-link" to="/Carrito">Carrito <i class="fa-solid fa-cart-shopping"></i></Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/Crud">Crud</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
             <br />
+            
             <h3>Catalogo</h3>
             <div className='row'>
                 {products.map((product) => (
@@ -63,7 +72,7 @@ const Catalog = () => {
                                 <h5 className='card-title'>{product.Producto}</h5>
                                 <p className='card-text'>{product.descripcion}</p>
                                 <p className='card-text'>Precio: ${product.Precio}</p>
-                                <button onClick={() => { addToCart(product.id) }} type='submit' className='btn btn-primary'>Agregar al carrito</button>
+                                <button className='btn btn-primary' onClick={() => addToCart(product.id)}>Agregar al carrito</button>
                             </div>
                         </div>
                     </div>
