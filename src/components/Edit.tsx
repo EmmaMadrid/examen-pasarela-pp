@@ -4,6 +4,9 @@ import { getDoc, updateDoc, doc } from 'firebase/firestore'
 import { db } from '../firebaseConfig/firebase'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+
 const MySwal = withReactContent(Swal)
 
 const Edit = () => {

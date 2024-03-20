@@ -4,10 +4,12 @@ import { db } from '../firebaseConfig/firebase'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 const MySwal = withReactContent(Swal)
 
-const Show = () => {
+const Crud = () => {
   // 1
   const [products, setProducts] = useState([])
   // 2
@@ -56,6 +58,7 @@ const Show = () => {
       background: '-webkit-linear-gradient(to right, #FFC837, #FF8008)', /* Chrome 10-25, Safari 5.1-6 */
       background: 'linear-gradient(to right, #FFC837, #FF8008)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }}>
+      <h1><span class="badge text-bg-warning">Inventario</span></h1>
       <div className='row'>
         <div className='col'>
           <div className='card'>
@@ -87,7 +90,7 @@ const Show = () => {
                       <td>{product.Producto}</td>
                       <td>{product.descripcion}</td>
                       <td>{product.stock}</td>
-                      <td>{product.Precio}</td>
+                      <td>${product.Precio}</td>
                       <td>
                         <Link to={`/edit/${product.id}`} className='btn btn-light'><i className="fa-solid fa-pencil"></i></Link>
                         <button onClick={() => { confirmDelete(product.id) }} className='btn btn-danger'><i className="fa-solid fa-trash"></i></button>
@@ -104,4 +107,4 @@ const Show = () => {
   )
 }
 
-export default Show
+export default Crud
