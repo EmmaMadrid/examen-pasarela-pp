@@ -19,10 +19,10 @@ const PayPalButton: React.FC<PaypalButtonInterface> = (props) => {
                             description: 'Compra en Panaderia Pan comido',
                             amount: {
                                 value: props.total,
-                                currency_code: 'USD', // Cambiado a pesos mexicanos (MXN)
+                                currency_code: 'USD', 
                                 breakdown: {
                                     item_total: {
-                                        currency_code: 'USD', // Cambiado a pesos mexicanos (MXN)
+                                        currency_code: 'USD', 
                                         value: props.total,
                                     },
                                 },
@@ -30,7 +30,7 @@ const PayPalButton: React.FC<PaypalButtonInterface> = (props) => {
                             items: props.products.map((product) => ({
                                 name: product.Producto,
                                 unit_amount: {
-                                    currency_code: 'USD', // Cambiado a pesos mexicanos (MXN)
+                                    currency_code: 'USD', 
                                     value: product.Precio,
                                 },
                                 quantity: 1,

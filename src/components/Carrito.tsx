@@ -34,42 +34,21 @@ const Carrito = () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const newCart = cart.filter((product) => product.id !== id);
         localStorage.setItem('cart', JSON.stringify(newCart));
+        window.location.reload();
         MySwal.fire({
           icon: 'success',
           title: 'Producto eliminado del carrito',
           showConfirmButton: false,
           timer: 1500
       });
-        window.location.reload();
     }
 
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-                    <Link className="navbar-brand" to="/">Panaderia Pan comido</Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Inicio</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/Carrito">Carrito</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/Crud">Crud</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
             <div>
+                
                 <h1><span className="badge text-bg-warning">Carrito de compras</span></h1>
                 <div className='row'>
                     <div className='col'>
@@ -78,7 +57,7 @@ const Carrito = () => {
                                 <table className='table'>
                                     <thead>
                                         <tr>
-                                            <th></th>
+                                            <th><Link to='/' className='btn btn-primary'>Seguir comprando</Link></th>
                                             <th>Producto</th>
                                             <th>Descripcion</th>
                                             <th>Precio</th>

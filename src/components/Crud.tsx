@@ -53,12 +53,9 @@ const Crud = () => {
   }, [])
   // 7
   return (
-    <div className='container' style={{
-      background: '#FF8008', /* fallback for old browsers */
-      background: '-webkit-linear-gradient(to right, #FFC837, #FF8008)', /* Chrome 10-25, Safari 5.1-6 */
-      background: 'linear-gradient(to right, #FFC837, #FF8008)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }}>
-      <h1><span class="badge text-bg-warning">Inventario</span></h1>
+    <div>
+      <br />
+      <br />
       <div className='row'>
         <div className='col'>
           <div className='card'>
@@ -66,11 +63,6 @@ const Crud = () => {
               <div className='d-grid gap-2'>
                 <Link to="/create" className='btn btn-secondary mt-2'>Crear producto</Link>
               </div>
-
-              {/* <div className='d-grid gap-2'>
-                <Link to="/FirebaseImageUpload" className='btn btn-secondary mt-2'>Subir Imagenes</Link>
-              </div> */}
-
               <table className='table table-darktable-hover'>
                 <thead>
                   <tr>
